@@ -1,0 +1,15 @@
+server:
+  port: 5000 # access the command api at port 5000
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: bankAccount
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092 # this is the default port where kafka runs in docker
+      # Defines the serializer for our keys and values when producing messages
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
