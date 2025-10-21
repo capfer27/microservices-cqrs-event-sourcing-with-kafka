@@ -1,0 +1,32 @@
+# Create a network to run all our containers in one single place
+docker network create --attachable -d bridge techbanknet
+
+The command above generates the id: 0c60321f321251b6127a600bd98628722f047aa7e518f82124667fd2c7dd695f
+
+# using docker-compose to run kafka, zookeeper in docker containers 
+# zookeeper is responsible for managing the kafka cluster and also for electing the lead broker.
+
+# Mongo DB 
+# -v means volumes which are files systems outside the container
+
+docker run -it -d --name mongo-container -p 27017:27017 --network techbanknet --restart always -v mongodb_data_container:/data/db mongo:latest
+
+docker exec -it some-mongo bash
+
+# Studio3 Community Edition
+  - Connection name: Docker Mongo
+
+# Run MySQL In Docker
+docker run -it -d --name mysql-container -p 3306:3306 --network techbanknet -e MYSQL_ROOT_PASSWORD=techbankrootpsw --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
+
+# MySQL Client Tools in Docker - Adminer
+docker run -it -d --name adminer -p 8080:8080 --network techbanknet -e ADMINER_DEFAULT_SERVER=mysql-container --restart always adminer:latest
+
+# Run PostgreSQL in Docker
+official command: docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+Custom command: docker run -it -d --name postgresql-container -p 5432:5432 --network techbanknet -e POSTGRES_PASSWORD=techbankrootpsw --restart always -v postgresql_data_container:/var/lib/mysql postgres:latest
+
+
+# PostgreSQL Client Tools in Docker - Adminer
+docker run -it -d --name adminer -p 8080:8080 --network techbanknet -e ADMINER_DEFAULT_SERVER=postgresql-container --restart always adminer:latest
