@@ -11,3 +11,10 @@ Java Microservices - CQRS & Event Sourcing with Kafka
 - Events - events are objects that describe somthing that has occurred in the application.
 		   A typical source of events is the aggregate. When something important has occurred
 		   within the aggregate, it will rase an event.			
+
+
+
+- Mediator Pattern - a behavioral design pattern that promotes loose coupling by preventing
+	objects from referring to each other explicitly.
+	Simplify communication between objets by introducing a single object known as
+	the mediator that manages the distribuition of messages among other objects.	 
