@@ -1,0 +1,13 @@
+Java Microservices - CQRS & Event Sourcing with Kafka
+
+- What is a Command -> a command is a combination of expressed intent.
+	In other words, it describes something that you want to be done.
+	It also contains the information required to undertake action based on that content.
+	Commands are named with a verb in the imperative mood. For instance, 
+		* OpenAccountsCommand
+		* DepositFundscommand
+
+
+- Events - events are objects that describe somthing that has occurred in the application.
+		   A typical source of events is the aggregate. When something important has occurred
+		   within the aggregate, it will rase an event.			

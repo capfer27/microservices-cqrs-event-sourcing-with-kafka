@@ -1,5 +1,6 @@
 rootProject.name = 'bank-account'
-include 'bank.cqrs.core'
+include ':bank.cqrs.core'
+project(':bank.cqrs.core').projectDir = new File(settingsDir, '../bank.cqrs.core')
 include 'bank.account.common'
 include 'bank.account.cmd'
 include 'bank.account.query'
