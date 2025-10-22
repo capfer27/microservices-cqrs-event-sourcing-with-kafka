@@ -14,7 +14,12 @@ Java Microservices - CQRS & Event Sourcing with Kafka
 
 
 
-- Mediator Pattern - a behavioral design pattern that promotes loose coupling by preventing
+- Mediator Pattern -> a behavioral design pattern that promotes loose coupling by preventing
 	objects from referring to each other explicitly.
 	Simplify communication between objets by introducing a single object known as
 	the mediator that manages the distribuition of messages among other objects.	 
+
+
+- The Aggregate -> is an entity or group of entities that is always kept in a consistence state.
+			The aggregate root is the entity within the aggregate that is responsible for maintaining this consistence state. This makes the aggregate the primary building
+			block in any CQRS based application. 
