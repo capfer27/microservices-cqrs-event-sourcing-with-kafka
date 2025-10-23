@@ -22,4 +22,10 @@ Java Microservices - CQRS & Event Sourcing with Kafka
 
 - The Aggregate -> is an entity or group of entities that is always kept in a consistence state.
 			The aggregate root is the entity within the aggregate that is responsible for maintaining this consistence state. This makes the aggregate the primary building
-			block in any CQRS based application. 
+			block in any CQRS based application.
+
+
+- The EventSourcingHandler provides an interface abstraction to which the command handler
+  can obtain the latest state of the aggregate. And through which it can persist the uncommited 
+  changes on the aggregate as events to the event store. Basically, it seats between the command
+  handler and the event store business logic. 	
