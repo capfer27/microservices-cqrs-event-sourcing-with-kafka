@@ -6,7 +6,6 @@ import com.capfer.techbank.common.events.AccountOpenedEvent;
 import com.capfer.techbank.common.events.FundsDepositedEvent;
 import com.capfer.techbank.common.events.FundsWithdrawnEvent;
 import com.capfer.techbank.cqrs.core.domain.AggregateRoot;
-import com.capfer.techbank.cqrs.core.messages.Message;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
